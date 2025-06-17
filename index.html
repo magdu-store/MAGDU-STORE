@@ -3,57 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="أفضل متجر لشراء العملات داخل الألعاب بأسعار تنافسية وخدمة فورية مع دعم فني متكامل">
-    <meta name="keywords" content="فري فاير, شراء ماسات, ألعاب, MAGDU STORE">
-    <title>MAGDU STORE | متجر الألعاب الرقمي</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>MAGDU STORE | متجر الألعاب</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        darkGreen: '#1a3a32',
-                        lightGreen: '#4caf50',
-                        primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    },
-                    fontFamily: {
-                        'tajawal': ['Tajawal', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+        
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: #1a3a32;
-            color: #333;
+            background: linear-gradient(135deg, #600000 0%, #3a0000 100%);
+            color: #fff;
             scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+        
+        .store-name {
+            font-weight: 900;
+            color: #ff0000;
+            text-shadow: 
+                0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 20px rgba(255, 0, 0, 0.6),
+                0 0 30px rgba(255, 0, 0, 0.4);
+            letter-spacing: -0.5px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 5px rgba(255, 0, 0, 0.8),
+                    0 0 10px rgba(255, 0, 0, 0.6),
+                    0 0 15px rgba(255, 0, 0, 0.4);
+            }
+            to {
+                text-shadow: 
+                    0 0 15px rgba(255, 0, 0, 0.8),
+                    0 0 25px rgba(255, 0, 0, 0.6),
+                    0 0 35px rgba(255, 0, 0, 0.4);
+            }
         }
         
         .game-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            background-color: #ffffff;
+            border: 1px solid #ff4d4d;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
         }
         
         .game-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
         }
         
         .price-option {
@@ -62,47 +61,16 @@
         }
         
         .price-option:hover {
-            background-color: #f8fafc;
-            border-color: #4caf50;
+            background-color: #fff0f0;
+            border-color: #ff4d4d;
         }
         
         .selected-option {
-            background-color: #dcfce7;
-            border-color: #22c55e;
-            box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+            background-color: #ffe6e6;
+            border-color: #ff0000;
+            box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
         }
         
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #4caf50;
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #388e3c;
-        }
-        
-        /* Loading animation */
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        /* Floating action button */
         .fab-button {
             position: fixed;
             bottom: 2rem;
@@ -114,25 +82,70 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+            background: linear-gradient(145deg, #ff0000, #b30000);
+            color: white;
         }
         
-        .store-name {
-            font-weight: 900;
-            color: #000;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: -0.5px;
+        input, select, textarea {
+            color: #000 !important;
+        }
+        
+        input::placeholder {
+            color: #666 !important;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(145deg, #ff0000, #b30000);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(145deg, #ff3333, #cc0000);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0000, #ff6666);
+            border-radius: 2px;
+        }
+        
+        .payment-card {
+            background: white;
+            border: 1px solid #ff4d4d;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #4a0000 0%, #2a0000 100%);
+            border-top: 2px solid #ff0000;
         }
     </style>
 </head>
-<body class="min-h-screen bg-darkGreen text-white font-tajawal">
+<body class="min-h-screen">
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/249126145401" target="_blank" class="fab-button bg-green-500 text-white hover:bg-green-600 transition-all">
+    <a href="https://wa.me/249126145401" target="_blank" class="fab-button">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
     
     <!-- Header -->
-    <header class="bg-darkGreen py-4 px-6 shadow-md sticky top-0 z-40">
+    <header class="py-4 px-6 shadow-md sticky top-0 z-40" style="background: rgba(74, 0, 0, 0.9);">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <a href="#" class="text-2xl md:text-3xl font-extrabold store-name">
@@ -140,29 +153,23 @@
                 </a>
             </div>
             
-            <div class="flex items-center space-x-4 space-x-reverse">
-                <button id="darkModeToggle" class="text-white p-2 rounded-full hover:bg-gray-700 transition" aria-label="تبديل الوضع الليلي">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
-                <nav class="hidden md:flex space-x-6 space-x-reverse">
-                    <a href="#free-fire" class="text-white hover:text-lightGreen transition py-1 px-2 rounded">فري فاير</a>
-                    <a href="#payment" class="text-white hover:text-lightGreen transition py-1 px-2 rounded">طرق الدفع</a>
-                    <a href="#contact" class="text-white hover:text-lightGreen transition py-1 px-2 rounded">اتصل بنا</a>
-                </nav>
-                
-                <button id="mobileMenuBtn" class="md:hidden text-white p-2 focus:outline-none" aria-label="فتح القائمة">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
+            <nav class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="#free-fire" class="text-white hover:text-red-300 py-1 px-2 rounded">فري فاير</a>
+                <a href="#payment" class="text-white hover:text-red-300 py-1 px-2 rounded">طرق الدفع</a>
+                <a href="#contact" class="text-white hover:text-red-300 py-1 px-2 rounded">اتصل بنا</a>
+            </nav>
+            
+            <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-darkGreen py-4 px-6 absolute left-0 right-0 z-50 shadow-lg border-t border-gray-700">
+        <div id="mobileMenu" class="hidden md:hidden py-4 px-6 absolute left-0 right-0 z-50 shadow-lg" style="background: rgba(74, 0, 0, 0.95);">
             <div class="flex flex-col space-y-4">
-                <a href="#free-fire" class="text-white hover:text-lightGreen transition py-2 px-3 rounded hover:bg-gray-800">فري فاير</a>
-                <a href="#payment" class="text-white hover:text-lightGreen transition py-2 px-3 rounded hover:bg-gray-800">طرق الدفع</a>
-                <a href="#contact" class="text-white hover:text-lightGreen transition py-2 px-3 rounded hover:bg-gray-800">اتصل بنا</a>
+                <a href="#free-fire" class="text-white hover:text-red-300 py-2 px-3">فري فاير</a>
+                <a href="#payment" class="text-white hover:text-red-300 py-2 px-3">طرق الدفع</a>
+                <a href="#contact" class="text-white hover:text-red-300 py-2 px-3">اتصل بنا</a>
             </div>
         </div>
     </header>
@@ -170,508 +177,150 @@
     <main class="container mx-auto px-4 py-8">
         <!-- Hero Section -->
         <section class="text-center mb-12 pt-8">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">مرحبًا بكم في <span class="store-name">MAGDU STORE</span></h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">أفضل متجر لشراء العملات داخل الألعاب بأسعار تنافسية وخدمة فورية مع دعم فني متكامل</p>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">مرحبًا بكم في <span class="store-name">MAGDU STORE</span></h1>
+            <p class="text-lg md:text-xl text-red-200 max-w-3xl mx-auto">أفضل متجر لشراء العملات داخل الألعاب بأسعار تنافسية وخدمة فورية مع دعم فني متكامل</p>
             
             <div class="mt-8 flex justify-center">
-                <a href="#free-fire" class="bg-gradient-to-r from-lightGreen to-green-600 text-white font-bold py-3 px-8 rounded-lg hover:from-green-600 hover:to-lightGreen transition transform hover:scale-105">
+                <a href="#free-fire" class="btn-gradient text-white font-bold py-3 px-8 rounded-lg">
                     <i class="fas fa-fire mr-2"></i> ابدأ الشراء الآن
                 </a>
             </div>
         </section>
         
-        <!-- Features Section -->
-        <section class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white bg-opacity-10 p-6 rounded-lg border border-white border-opacity-10">
-                <div class="w-12 h-12 bg-lightGreen bg-opacity-20 rounded-full flex items-center justify-center text-lightGreen mb-4">
-                    <i class="fas fa-bolt text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">توصيل فوري</h3>
-                <p class="text-gray-300">استلام العملات خلال دقائق بعد تأكيد الدفع</p>
-            </div>
+        <!-- Free Fire Section -->
+        <section id="free-fire" class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center text-white section-title">فري فاير</h2>
             
-            <div class="bg-white bg-opacity-10 p-6 rounded-lg border border-white border-opacity-10">
-                <div class="w-12 h-12 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center text-blue-400 mb-4">
-                    <i class="fas fa-shield-alt text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">آمن ومضمون</h3>
-                <p class="text-gray-300">معاملات آمنة مع ضمان استرجاع الأموال في حال وجود مشكلة</p>
-            </div>
-            
-            <div class="bg-white bg-opacity-10 p-6 rounded-lg border border-white border-opacity-10">
-                <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center text-purple-400 mb-4">
-                    <i class="fas fa-headset text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">دعم فني 24/7</h3>
-                <p class="text-gray-300">فريق دعم فني متاح على مدار الساعة لمساعدتك</p>
-            </div>
-        </section>
-        
-        <!-- Games Section -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 text-center relative pb-4">
-                <span class="relative z-10 px-4 bg-darkGreen">فري فاير</span>
-                <span class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lightGreen to-transparent"></span>
-            </h2>
-            
-            <div class="max-w-2xl mx-auto">
-                <!-- Free Fire Card -->
-                <div id="free-fire" class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-lightGreen to-green-600 rounded-full flex items-center justify-center text-white mr-3">
-                                <i class="fas fa-fire text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">فري فاير</h3>
-                        </div>
-                        
-                        <p class="text-gray-600 mb-6">اشتر الماسات الخاصة بك بسهولة وأمان مع أفضل الأسعار في السوق</p>
-                        
-                        <div id="freeFireForm">
-                            <div class="mb-4">
-                                <label for="freeFireId" class="block text-gray-700 mb-2 font-medium">معرف اللاعب <span class="text-red-500">*</span></label>
-                                <input type="text" id="freeFireId" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lightGreen focus:border-transparent" placeholder="أدخل معرف اللاعب" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="freeFireCountry" class="block text-gray-700 mb-2 font-medium">اختر الدولة <span class="text-red-500">*</span></label>
-                                <select id="freeFireCountry" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lightGreen focus:border-transparent" required>
-                                    <option value="">-- اختر الدولة --</option>
-                                    <option value="SDG">السودان</option>
-                                    <option value="EGP">مصر</option>
-                                </select>
-                            </div>
-                            
-                            <div id="freeFirePrices" class="hidden mb-6">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-3">اختر الباقة المناسبة:</h4>
-                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-60 overflow-y-auto p-2">
-                                    <!-- Prices will be populated by JavaScript -->
-                                </div>
-                            </div>
-                            
-                            <button id="freeFireBuyBtn" class="hidden w-full bg-gradient-to-r from-lightGreen to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-lightGreen transition-all font-bold">
-                                <i class="fas fa-shopping-cart mr-2"></i> شراء الآن
-                            </button>
-                        </div>
+            <div class="max-w-2xl mx-auto game-card rounded-xl p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center text-white mr-3">
+                        <i class="fas fa-fire text-xl"></i>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section class="mb-16 bg-white bg-opacity-10 rounded-xl p-8 border border-white border-opacity-10">
-            <h2 class="text-2xl font-bold mb-8 text-center relative pb-4">
-                <span class="relative z-10 px-4 bg-darkGreen">آراء العملاء</span>
-                <span class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lightGreen to-transparent"></span>
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg p-6 shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 font-bold mr-3">م</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">محمد أحمد</h4>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"اشتريت عدة مرات من المتجر، الخدمة سريعة والاسعار مناسبة. شكرًا لكم"</p>
+                    <h3 class="text-xl font-bold text-gray-800">شراء الماسات</h3>
                 </div>
                 
-                <div class="bg-white rounded-lg p-6 shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 font-bold mr-3">ع</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">علي حسن</h4>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"أفضل متجر لشراء الماسات، استلمت الطلب خلال 5 دقائق. أوصي به الجميع"</p>
+                <div class="mb-4">
+                    <label for="freeFireId" class="block text-gray-700 mb-2 font-medium">معرف اللاعب <span class="text-red-500">*</span></label>
+                    <input type="text" id="freeFireId" class="w-full px-4 py-2 border rounded-lg bg-white" placeholder="أدخل معرف اللاعب" required>
                 </div>
                 
-                <div class="bg-white rounded-lg p-6 shadow">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 font-bold mr-3">ي</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">يوسف عمر</h4>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"خدمة ممتازة، لكن أتمنى إضافة المزيد من خيارات الدفع في المستقبل"</p>
+                <div class="mb-4">
+                    <label for="freeFireCountry" class="block text-gray-700 mb-2 font-medium">اختر الدولة <span class="text-red-500">*</span></label>
+                    <select id="freeFireCountry" class="w-full px-4 py-2 border rounded-lg bg-white" required>
+                        <option value="">-- اختر الدولة --</option>
+                        <option value="SDG">السودان</option>
+                        <option value="EGP">مصر</option>
+                    </select>
                 </div>
+                
+                <div id="freeFirePrices" class="hidden mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">اختر الباقة:</h4>
+                    <div class="grid grid-cols-2 gap-3 max-h-60 overflow-y-auto p-2">
+                        <!-- Prices will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <button id="freeFireBuyBtn" class="hidden w-full btn-gradient text-white py-3 px-4 rounded-lg font-bold">
+                    <i class="fas fa-shopping-cart mr-2"></i> شراء الآن
+                </button>
             </div>
         </section>
         
         <!-- Payment Methods -->
-        <section id="payment" class="mb-16 bg-white rounded-xl shadow-lg p-8">
-            <h2 class="text-2xl font-bold mb-8 text-center relative pb-4">
-                <span class="relative z-10 px-4 bg-white">طرق الدفع المتاحة</span>
-                <span class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lightGreen to-transparent"></span>
-            </h2>
+        <section id="payment" class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center text-white section-title">طرق الدفع</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Bankak -->
-                <div class="payment-method border rounded-xl p-6 hover:shadow-md transition">
+                <div class="payment-card rounded-xl p-6">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white mr-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center text-white mr-3">
                             <i class="fas fa-university"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800">بنكاك (السودان)</h3>
                     </div>
                     
-                    <div class="payment-details hidden">
-                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-credit-card text-purple-500 mr-2"></i>
-                                <p class="text-gray-700 font-medium">رقم الحساب:</p>
-                                <p class="text-gray-700 mr-2">9308430</p>
-                                <button class="copy-btn ml-auto text-purple-500 hover:text-purple-700" data-clipboard-text="9308430">
-                                    <i class="far fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-user text-purple-500 mr-2"></i>
-                                <p class="text-gray-700 font-medium">اسم الحساب:</p>
-                                <p class="text-gray-700 mr-2">طارق فضل المولي يوسف</p>
-                                <button class="copy-btn ml-auto text-purple-500 hover:text-purple-700" data-clipboard-text="طارق فضل المولي يوسف">
-                                    <i class="far fa-copy"></i>
-                                </button>
-                            </div>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-credit-card text-purple-600 mr-2"></i>
+                            <p class="text-gray-700 font-medium">رقم الحساب:</p>
+                            <p class="text-gray-700 mr-2">9308430</p>
                         </div>
-                        <p class="text-gray-600 text-sm">
-                            <i class="fas fa-info-circle text-purple-500 mr-1"></i>
-                            بعد التحويل، يرجى إرسال إيصال الدفع عبر الواتساب مع رقم الطلب
-                        </p>
+                        <div class="flex items-center">
+                            <i class="fas fa-user text-purple-600 mr-2"></i>
+                            <p class="text-gray-700 font-medium">اسم الحساب:</p>
+                            <p class="text-gray-700 mr-2">طارق فضل المولي يوسف</p>
+                        </div>
                     </div>
-                    
-                    <button class="payment-toggle-btn w-full mt-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-purple-500 transition-all">
-                        <i class="fas fa-eye mr-2"></i> عرض التفاصيل
-                    </button>
+                    <p class="text-gray-600 text-sm">
+                        بعد التحويل، يرجى إرسال إيصال الدفع عبر الواتساب
+                    </p>
                 </div>
                 
                 <!-- MyCashy -->
-                <div class="payment-method border rounded-xl p-6 hover:shadow-md transition">
+                <div class="payment-card rounded-xl p-6">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white mr-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-800 rounded-full flex items-center justify-center text-white mr-3">
                             <i class="fas fa-wallet"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-800">ماي كاشي</h3>
                     </div>
                     
-                    <div class="payment-details hidden">
-                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-credit-card text-orange-500 mr-2"></i>
-                                <p class="text-gray-700 font-medium">رقم الحساب:</p>
-                                <p class="text-gray-700 mr-2">843197</p>
-                                <button class="copy-btn ml-auto text-orange-500 hover:text-orange-700" data-clipboard-text="843197">
-                                    <i class="far fa-copy"></i>
-                                </button>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-user text-orange-500 mr-2"></i>
-                                <p class="text-gray-700 font-medium">اسم الحساب:</p>
-                                <p class="text-gray-700 mr-2">طارق فضل المولي يوسف</p>
-                                <button class="copy-btn ml-auto text-orange-500 hover:text-orange-700" data-clipboard-text="طارق فضل المولي يوسف">
-                                    <i class="far fa-copy"></i>
-                                </button>
-                            </div>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-credit-card text-orange-600 mr-2"></i>
+                            <p class="text-gray-700 font-medium">رقم الحساب:</p>
+                            <p class="text-gray-700 mr-2">843197</p>
                         </div>
-                        <p class="text-gray-600 text-sm">
-                            <i class="fas fa-info-circle text-orange-500 mr-1"></i>
-                            بعد التحويل، يرجى إرسال إيصال الدفع عبر الواتساب مع رقم الطلب
-                        </p>
+                        <div class="flex items-center">
+                            <i class="fas fa-user text-orange-600 mr-2"></i>
+                            <p class="text-gray-700 font-medium">اسم الحساب:</p>
+                            <p class="text-gray-700 mr-2">طارق فضل المولي يوسف</p>
+                        </div>
                     </div>
-                    
-                    <button class="payment-toggle-btn w-full mt-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-4 rounded-lg hover:from-orange-600 hover:to-orange-500 transition-all">
-                        <i class="fas fa-eye mr-2"></i> عرض التفاصيل
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- FAQ Section -->
-        <section class="mb-16 bg-white bg-opacity-10 rounded-xl p-8 border border-white border-opacity-10">
-            <h2 class="text-2xl font-bold mb-8 text-center relative pb-4">
-                <span class="relative z-10 px-4 bg-darkGreen">الأسئلة الشائعة</span>
-                <span class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lightGreen to-transparent"></span>
-            </h2>
-            
-            <div class="space-y-4">
-                <div class="faq-item border-b border-gray-700 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-right focus:outline-none">
-                        <span class="text-lg font-medium">كم من الوقت يستغرق استلام العملات؟</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden mt-2 text-gray-300">
-                        <p>عادةً ما يتم إتمام الطلب خلال 5-15 دقيقة بعد تأكيد الدفع. في بعض الأحيان قد يستغرق الأمر وقتًا أطول قليلاً حسب ازدحام الخوادم.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item border-b border-gray-700 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-right focus:outline-none">
-                        <span class="text-lg font-medium">هل هناك ضمان لاسترجاع الأموال؟</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden mt-2 text-gray-300">
-                        <p>نعم، في حال لم يتم استلام العملات خلال 24 ساعة، يمكنك طلب استرجاع كامل المبلغ أو إعادة إرسال الطلب.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item border-b border-gray-700 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-right focus:outline-none">
-                        <span class="text-lg font-medium">هل يمكنني الشراء لأصدقائي؟</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden mt-2 text-gray-300">
-                        <p>نعم، يمكنك إدخال معرف اللاعب الخاص بصديقك عند الشراء. تأكد من إدخال المعرف الصحيح.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item border-b border-gray-700 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-right focus:outline-none">
-                        <span class="text-lg font-medium">هل هناك خصومات للطلبات الكبيرة؟</span>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden mt-2 text-gray-300">
-                        <p>نعم، نقدم خصومات خاصة للطلبات الكبيرة. تواصل معنا عبر الواتساب لمعرفة التفاصيل.</p>
-                    </div>
+                    <p class="text-gray-600 text-sm">
+                        بعد التحويل، يرجى إرسال إيصال الدفع عبر الواتساب
+                    </p>
                 </div>
             </div>
         </section>
         
         <!-- Contact Section -->
-        <section id="contact" class="bg-white rounded-xl shadow-lg p-8">
-            <h2 class="text-2xl font-bold mb-8 text-center relative pb-4">
-                <span class="relative z-10 px-4 bg-white">تواصل معنا</span>
-                <span class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lightGreen to-transparent"></span>
-            </h2>
+        <section id="contact" class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center text-white section-title">اتصل بنا</h2>
             
-            <p class="text-gray-700 text-center mb-8">لديك استفسار أو تحتاج إلى مساعدة؟ فريق الدعم لدينا متاح على مدار الساعة</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">معلومات التواصل</h3>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-lightGreen bg-opacity-20 rounded-full flex items-center justify-center text-lightGreen mt-1 mr-3">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">الدعم الفني</h4>
-                                <p class="text-gray-600">متاح 24/7 لمساعدتك في أي استفسار</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center text-blue-500 mt-1 mr-3">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">الواتساب</h4>
-                                <div class="flex flex-col space-y-2 mt-1">
-                                    <a href="https://wa.me/249126145401" target="_blank" class="text-gray-600 hover:text-blue-500 transition">
-                                        <i class="fas fa-phone-alt mr-2"></i> +249 12 614 5401
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center text-purple-500 mt-1 mr-3">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">البريد الإلكتروني</h4>
-                                <a href="mailto:magdu126magdu@gmail.com" class="text-gray-600 hover:text-purple-500 transition">
-                                    magdu126magdu@gmail.com
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <a href="https://wa.me/249126145401" target="_blank" class="inline-flex items-center btn-gradient text-white py-3 px-8 rounded-lg">
+                        <i class="fab fa-whatsapp text-xl mr-2"></i>
+                        <span class="font-bold">+249 12 614 5401</span>
+                    </a>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">أرسل رسالة</h3>
-                    
-                    <form id="contactForm" class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-2 font-medium">اسمك</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lightGreen focus:border-transparent" required>
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-gray-700 mb-2 font-medium">البريد الإلكتروني</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lightGreen focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-gray-700 mb-2 font-medium">الرسالة</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lightGreen focus:border-transparent" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-gradient-to-r from-lightGreen to-green-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-lightGreen transition-all font-medium">
-                            <i class="fas fa-paper-plane mr-2"></i> إرسال الرسالة
-                        </button>
-                    </form>
+                <div class="text-center">
+                    <a href="mailto:magdu126magdu@gmail.com" class="inline-flex items-center text-gray-700 hover:text-red-600 font-bold">
+                        <i class="fas fa-envelope text-xl mr-2"></i>
+                        <span>magdu126magdu@gmail.com</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
     
-    <footer class="bg-darkGreen py-8 mt-12 border-t border-gray-700">
+    <footer class="py-8 mt-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-lightGreen">MAGDU STORE</h3>
-                    <p class="text-gray-300">أفضل متجر لشراء العملات داخل الألعاب بأسعار تنافسية وخدمة سريعة.</p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4 text-white">الألعاب</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#free-fire" class="text-gray-300 hover:text-lightGreen transition">فري فاير</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4 text-white">روابط سريعة</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#payment" class="text-gray-300 hover:text-lightGreen transition">طرق الدفع</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-lightGreen transition">اتصل بنا</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-lightGreen transition">الأسئلة الشائعة</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4 text-white">تابعنا</h4>
-                    <div class="flex space-x-4 space-x-reverse">
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-lightGreen transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-blue-400 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-4 text-red-300">MAGDU STORE</h3>
+                <p class="text-red-200">أفضل متجر لشراء العملات داخل الألعاب بأسعار تنافسية وخدمة سريعة.</p>
             </div>
             
-            <div class="pt-6 border-t border-gray-700 text-center">
-                <p class="text-gray-400">© 2023 MAGDU STORE. جميع الحقوق محفوظة.</p>
+            <div class="pt-6 mt-6 border-t border-red-800 text-center">
+                <p class="text-red-300">© 2023 MAGDU STORE. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Clipboard.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-    
     <script>
-        // Initialize Clipboard.js
-        new ClipboardJS('.copy-btn');
-        
-        // Show tooltip when copied
-        document.querySelectorAll('.copy-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-check"></i>';
-                
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                }, 2000);
-            });
-        });
-        
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        const darkModeState = localStorage.getItem('darkMode');
-        
-        // Check for saved user preference
-        if (darkModeState === 'enabled') {
-            body.classList.add('bg-gray-900');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('bg-gray-900');
-            
-            if (body.classList.contains('bg-gray-900')) {
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('hidden') ? 
-                '<i class="fas fa-bars text-xl"></i>' : '<i class="fas fa-times text-xl"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-            });
-        });
-        
-        // Payment Methods Toggle
-        const paymentToggleBtns = document.querySelectorAll('.payment-toggle-btn');
-        
-        paymentToggleBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const paymentDetails = this.previousElementSibling;
-                paymentDetails.classList.toggle('hidden');
-                
-                if (paymentDetails.classList.contains('hidden')) {
-                    this.innerHTML = '<i class="fas fa-eye mr-2"></i> عرض التفاصيل';
-                } else {
-                    this.innerHTML = '<i class="fas fa-eye-slash mr-2"></i> إخفاء التفاصيل';
-                }
-            });
-        });
-        
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                answer.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
-            });
-        });
-        
         // Free Fire Prices
         const freeFirePricesData = {
             SDG: [
@@ -696,6 +345,14 @@
             ]
         };
         
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
         // Country Selection - Free Fire
         const freeFireCountry = document.getElementById('freeFireCountry');
         const freeFirePrices = document.getElementById('freeFirePrices');
@@ -713,9 +370,8 @@
                     priceOption.className = 'price-option border rounded-lg p-3 cursor-pointer text-center bg-white';
                     priceOption.innerHTML = `
                         <p class="font-medium text-gray-800">${item.diamonds}</p>
-                        <p class="text-lightGreen font-bold">${item.price}</p>
+                        <p class="text-red-600 font-bold">${item.price}</p>
                     `;
-                    priceOption.dataset.value = item.value;
                     
                     priceOption.addEventListener('click', function() {
                         document.querySelectorAll('#freeFirePrices .price-option').forEach(opt => {
@@ -751,42 +407,13 @@
             
             const packageText = selectedOption.querySelector('p:first-child').textContent;
             const priceText = selectedOption.querySelector('p:last-child').textContent;
-            const packageValue = selectedOption.dataset.value;
             
             const countryName = country === 'SDG' ? 'السودان' : 'مصر';
             
-            const message = `مرحبًا، أريد شراء الماسات لفري فاير\n\nمعرف اللاعب: ${playerId}\nالباقة: ${packageText}\nالسعر: ${priceText}\nالدولة: ${countryName}\n\nرمز الباقة: ${packageValue}`;
+            const message = `مرحبًا، أريد شراء الماسات لفري فاير\n\nمعرف اللاعب: ${playerId}\nالباقة: ${packageText}\nالسعر: ${priceText}\nالدولة: ${countryName}`;
             const encodedMessage = encodeURIComponent(message);
             
             window.open(`https://wa.me/249126145401?text=${encodedMessage}`, '_blank');
-        });
-        
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            
-            if (!name || !message) {
-                alert('الرجاء إدخال الاسم والرسالة');
-                return;
-            }
-            
-            const subject = `رسالة جديدة من ${name}`;
-            const body = `الاسم: ${name}\nالبريد الإلكتروني: ${email || 'غير متوفر'}\n\nالرسالة:\n${message}`;
-            const encodedBody = encodeURIComponent(body);
-            
-            window.open(`mailto:magdu126magdu@gmail.com?subject=${subject}&body=${encodedBody}`);
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Show success message
-            alert('شكرًا لك على رسالتك! سنقوم بالرد عليك في أقرب وقت ممكن.');
         });
         
         // Smooth scrolling for anchor links
@@ -802,9 +429,12 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
                 }
             });
         });
     </script>
 </body>
-</html>
+    </html>
